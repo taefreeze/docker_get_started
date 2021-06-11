@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: docker build
         run: |
-          docker build -t ${{ secrets.DOCKER_USER }}/apicon:latest .
+          docker build -t ${{ secrets.DOCKER_USER }}/get_started_docker:latest .
       - name: docker push
         run: |
-          docker push taefreeze/apicon:1.0.0
+          docker push ${{ secrets.DOCKER_USER }}/get_started_docker:latest
