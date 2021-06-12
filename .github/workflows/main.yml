@@ -25,4 +25,4 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USER }}/get_started_docker:latest -t ${{ secrets.DOCKER_USER }}/get_started_docker:0.1 .
       - name: docker push
         run: |
-          docker image push --all-tags taefreeze/get_started_docker
+          docker image push --all-tags ${{ secrets.DOCKER_USER }}/get_started_docker
