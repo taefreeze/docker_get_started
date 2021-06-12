@@ -27,3 +27,4 @@ jobs:
         run: |
           for tag in latest 0.1; do
              docker push "taefreeze:${tag}"
+          done
