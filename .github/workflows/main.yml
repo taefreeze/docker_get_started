@@ -22,7 +22,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: docker build
         run: |
-          docker build -t ${{ secrets.DOCKER_USER }}/get_started_docker:latest .
+          docker build -t ${{ secrets.DOCKER_USER }}/get_started_docker:latest -t ${{ secrets.DOCKER_USER }}/get_started_docker:0.1 .
       - name: docker push
         run: |
-          docker push ${{ secrets.DOCKER_USER }}/get_started_docker:latest
+          for tag in latest 0.1; do
+             docker push "taefreeze:${tag}"
